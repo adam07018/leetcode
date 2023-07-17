@@ -1,0 +1,17 @@
+树层去重：当num里有重复元素但是给出的答案不能重复
+        如果num可以排序， 就先sort
+        if i > startIndex and candidates[i] == candidates[i - 1]:
+            continue
+        eg. Combination_sum2, subsets2
+        
+        如果num不能排序，用visited记录
+        树层里去重， visited在各个recursion里不通用
+        eg. non_decreasing_subsequence
+        树枝里去重，visited是 global
+        eg. permutation
+        
+        同时去重：排序和visited共用, 或者两个visited， 
+        eg. permutation2
+
+return 类型：要所有组合，用void
+            只要一个答案，用boolean
