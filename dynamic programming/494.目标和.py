@@ -15,6 +15,24 @@ class Solution:
         if (target + sum) % 2 == 1:
             return 0
         plus = (target + sum) // 2
+        dp = [0] * (plus + 1)
+        dp[0] = 1
+        for i in nums:
+            for j in range(plus, -1, -1):
+                if  j >= i:
+                    dp[j] += dp[j - i]
+        return dp[-1]
+
+
+    def findTargetSumWays1(self, nums: list[int], target: int) -> int:
+        sum = 0
+        for j in nums:
+            sum += j
+        if abs(target) > sum:
+            return 0
+        if (target + sum) % 2 == 1:
+            return 0
+        plus = (target + sum) // 2
         
         dp = [[0] * (plus + 1) for _ in range(len(nums))]
 
