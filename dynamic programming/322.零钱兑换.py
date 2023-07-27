@@ -12,8 +12,6 @@ class Solution:
         dp[0] = 0
         for i in range(len(coins)):
             for j in range(coins[i], len(dp)):
-                #r = j % coins[i]
-                #q = (j - r) // coins[i]
                 dp[j] = min(dp[j - coins[i]] + 1, dp[j])
         if dp[-1] == float('inf'):
             return -1

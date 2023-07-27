@@ -7,7 +7,7 @@
 # @lc code=start
 class Solution:
     def findMaxForm(self, strs: list[str], m: int, n: int) -> int:
-        dp = dp = [[0] * (n + 1) for _ in range(m  + 1)]
+        dp = [[0] * (n + 1) for _ in range(m  + 1)]
         for s in strs:
             zeroNum = s.count("0")
             oneNum = s.count("1")
